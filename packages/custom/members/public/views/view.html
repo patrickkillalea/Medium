@@ -1,5 +1,4 @@
 <section data-ng-controller="MembersController" data-ng-init="findOne()">
-    <h2>{{member.title}}</h2>
     <div data-ng-if="hasAuthorization(member)">
         <a class="btn" href="/members/{{member._id}}/edit">
             <i class="glyphicon glyphicon-edit"></i>
@@ -8,9 +7,44 @@
             <i class="glyphicon glyphicon-trash"></i>
         </a>
     </div>
-    <img src="{{member.avatar}}" />
-    <div>{{member.rank}}</div>
-    <div>{{member.email}}</div>
-    <div>{{member.number}}</div>
-    <div>{{member.content}}</div>
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <div class="circle-box">
+                <div class="circle-content">
+                    <img src="{{member.avatar}}" class="circle-image" />
+                </div>
+            </div>
+            </br>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-6">
+            <h2>{{member.title}}</h2>
+            <div>{{member.rank}}</div>
+            <div>{{member.email}}</div>
+            <div>{{member.number}}</div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <pre>{{member.content}}</pre>
+        </div>
+    </div>
 </section>
+<style>
+pre {
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: normal;
+    /* Internet Explorer 5.5+ */
+    word-break: normal;
+    background-color: white;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+</style>
