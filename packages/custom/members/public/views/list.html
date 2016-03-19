@@ -1,7 +1,7 @@
 <section data-ng-controller="MembersController" data-ng-init="find()">
-<div class="jumbotron">
-<p>The Internal Audit Department’s mission is to provide independent, objective assurance and consulting activities designed to add value and improve the effectiveness of Duke Realty’s accounting and operating controls, risk management, and governance processes. Internal Audit reports directly to the Audit Committee of the Board of Directors.</p>
-</div>
+    <div class="jumbotron">
+        <p>The Internal Audit Department’s mission is to provide independent, objective assurance and consulting activities designed to add value and improve the effectiveness of Duke Realty’s accounting and operating controls, risk management, and governance processes. Internal Audit reports directly to the Audit Committee of the Board of Directors.</p>
+    </div>
     <div class="members">
         <div data-ng-repeat="member in members">
             <div class="col-md-3 col-sm-4 col-xs-6">
@@ -16,6 +16,17 @@
                 </div>
                 </br>
             </div>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <div class="circle-box">
+                <a data-ng-href="/members/create">
+                    <div class="circle-content">
+                        <img src="https://cdn4.iconfinder.com/data/icons/website-kit-2/600/Sign_Up-512.png" class="circle-image" />
+                        <div class="circle-title">Add Member</div>
+                </a>
+                </div>
+            </div>
+            </br>
         </div>
     </div>
     <h1 data-ng-hide="!members || members.length">No members yet. <br> Why don't you <a href="/members/create">Create One</a>?</h1>

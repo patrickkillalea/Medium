@@ -1,6 +1,4 @@
 <section data-ng-controller="MembersController" data-ng-init="findOne()">
-    <span>{{member.created | date:'medium'}}</span> /
-    <span>{{member.user.name}}</span>
     <h2>{{member.title}}</h2>
     <div data-ng-if="hasAuthorization(member)">
         <a class="btn" href="/members/{{member._id}}/edit">
@@ -10,5 +8,9 @@
             <i class="glyphicon glyphicon-trash"></i>
         </a>
     </div>
+    <img src="{{member.avatar}}" />
+    <div>{{member.rank}}</div>
+    <div>{{member.email}}</div>
+    <div>{{member.number}}</div>
     <div>{{member.content}}</div>
 </section>

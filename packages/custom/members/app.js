@@ -21,14 +21,14 @@ Members.register(function(app, auth, database, circles) {
     //We are adding a link to the main menu for all authenticated users
     Members.menus.add({
         'roles': ['all'],
-        'title': 'Members',
+        'title': 'Team',
         'link': 'all members'
     });
-    Members.menus.add({
-        'roles': ['authenticated'],
-        'title': 'Create New Member',
-        'link': 'create member'
-    });
+    // Members.menus.add({
+    //     'roles': ['authenticated'],
+    //     'title': 'Create New Member',
+    //     'link': 'create member'
+    // });
 
     Members.events.defaultData({
         type: 'post',
