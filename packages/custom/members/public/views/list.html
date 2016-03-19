@@ -1,21 +1,22 @@
 <section data-ng-controller="MembersController" data-ng-init="find()">
-    <ul class="members unstyled">
-        <li data-ng-repeat="member in members">
-            <span>{{member.created | date:'medium'}}</span> /
-            <span>{{member.user.name}}</span>
-            <h2>
-        <a data-ng-href="/members/{{member._id}}">{{member.title}}</a>
-        <span data-ng-if="hasAuthorization(member)">
-          <a class="btn" href="/members/{{member._id}}/edit">
-            <i class="glyphicon glyphicon-edit"></i>
-          </a>
-          <a class="btn" data-ng-click="remove(member);">
-            <i class="glyphicon glyphicon-trash"></i>
-          </a>
-        </span>
-      </h2>
-            <div>{{member.content}}</div>
-        </li>
-    </ul>
+<div class="jumbotron">
+<p>The Internal Audit Department’s mission is to provide independent, objective assurance and consulting activities designed to add value and improve the effectiveness of Duke Realty’s accounting and operating controls, risk management, and governance processes. Internal Audit reports directly to the Audit Committee of the Board of Directors.</p>
+</div>
+    <div class="members">
+        <div data-ng-repeat="member in members">
+            <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="circle-box">
+                    <div class="circle-content">
+                        <div class="circle-rank">{{member.rank}}</div>
+                        <a data-ng-href="/members/{{member._id}}">
+                            <img src="{{member.avatar}}" class="circle-image" />
+                        </a>
+                        <div class="circle-title">{{member.title}}</div>
+                    </div>
+                </div>
+                </br>
+            </div>
+        </div>
+    </div>
     <h1 data-ng-hide="!members || members.length">No members yet. <br> Why don't you <a href="/members/create">Create One</a>?</h1>
 </section>

@@ -25,6 +25,26 @@ var MemberSchema = new Schema({
         required: true,
         trim: true
     },
+    avatar: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    rank: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    email: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    number: {
+        type: String,
+        required: true,
+        trim: true
+    },
     user: {
         type: Schema.ObjectId,
         ref: 'User',
