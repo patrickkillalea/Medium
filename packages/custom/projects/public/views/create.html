@@ -1,0 +1,80 @@
+<section data-ng-controller="ProjectsController">
+    <form name="projectForm" class="form-horizontal col-md-6" role="form" data-ng-submit="create(projectForm.$valid)" novalidate>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && projectForm.title.$invalid }">
+            <label mean-token="'create-title'" class="col-md-3 control-label">Name</label>
+            <div class="col-md-9">
+                <input name="title" type="text" class="form-control" data-ng-model="project.title" id="title" placeholder="Title" required>
+                <div ng-show="submitted && projectForm.title.$invalid" class="help-block">
+                    <p ng-show="projectForm.title.$error.required">Name is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && projectForm.content.$invalid }">
+            <label mean-token="'create-content'" for="content" class="col-md-3 control-label">Description</label>
+            <div class="col-md-9">
+                <textarea name="content" data-ng-model="project.content" id="content" cols="30" rows="10" placeholder="Content" class="form-control" required></textarea>
+                <div ng-show="submitted && projectForm.content.$invalid" class="help-block">
+                    <p ng-show="projectForm.content.$error.required">Description is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && projectForm.avatar.$invalid }">
+            <label mean-token="'create-avatar'" class="col-md-3 control-label">Avatar</label>
+            <div class="col-md-9">
+                <input name="avatar" type="text" class="form-control" data-ng-model="project.avatar" id="avatar" placeholder="Avatar URL" required>
+                <div ng-show="submitted && projectForm.avatar.$invalid" class="help-block">
+                    <p ng-show="projectForm.avatar.$error.required">Avatar is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && projectForm.rank.$invalid }">
+            <label mean-token="'create-rank'" class="col-md-3 control-label">Rank</label>
+            <div class="col-md-9">
+                <input name="rank" type="text" class="form-control" data-ng-model="project.rank" id="rank" placeholder="Rank" required>
+                <div ng-show="submitted && projectForm.rank.$invalid" class="help-block">
+                    <p ng-show="projectForm.rank.$error.required">Rank is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && projectForm.email.$invalid }">
+            <label mean-token="'create-email'" class="col-md-3 control-label">Email</label>
+            <div class="col-md-9">
+                <input name="email" type="email" class="form-control" data-ng-model="project.email" id="email" placeholder="Email" required>
+                <div ng-show="submitted && projectForm.email.$invalid" class="help-block">
+                    <p ng-show="projectForm.email.$error.required">Email is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error' : submitted && projectForm.number.$invalid }">
+            <label mean-token="'create-number'" class="col-md-3 control-label">Number</label>
+            <div class="col-md-9">
+                <input name="number" type="text" class="form-control" data-ng-model="project.number" id="number" placeholder="Number" required>
+                <div ng-show="submitted && projectForm.number.$invalid" class="help-block">
+                    <p ng-show="projectForm.number.$error.required">Number is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label mean-token="'permissions'" for="permissions" class="col-md-3 control-label">Permissions</label>
+            <div class="col-md-9">
+                <ui-select multiple ng-model="project.permissions" append-to-body="'true'" on-select="selectPermission()">
+                    <ui-select-match placeholder="Select permissions..." ng-click="showDescendants();">{{$item}}</ui-select-match>
+                    <ui-select-choices repeat="circle in availableCircles | filter:$select.search" name="permissions">
+                        {{circle}}
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="form-group" ng-show="descendants.length">
+            <label mean-token="'descendants'" for="descendants" class="col-md-3 control-label">Descendants</label>
+            <div class="col-md-9">
+                <span ng-repeat="descendant in descendants">{{descendant}} <span ng-hide="$last">, </span></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <button mean-token="'create-submit'" type="submit" class="btn btn-info">Submit</button>
+            </div>
+        </div>
+    </form>
+</section>

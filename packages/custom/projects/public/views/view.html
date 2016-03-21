@@ -1,0 +1,50 @@
+<section data-ng-controller="ProjectsController" data-ng-init="findOne()">
+    <div data-ng-if="hasAuthorization(project)">
+        <a class="btn" href="/projects/{{project._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn" data-ng-click="remove(project);">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <div class="circle-box">
+                <div class="circle-content">
+                    <img src="{{project.avatar}}" class="circle-image" />
+                </div>
+            </div>
+            </br>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-6">
+            <h2>{{project.title}}</h2>
+            <div>{{project.rank}}</div>
+            <div>{{project.email}}</div>
+            <div>{{project.number}}</div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <pre>{{project.content}}</pre>
+        </div>
+    </div>
+</section>
+<style>
+pre {
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: normal;
+    /* Internet Explorer 5.5+ */
+    word-break: normal;
+    background-color: white;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+</style>

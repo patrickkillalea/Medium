@@ -1,0 +1,32 @@
+<section data-ng-controller="ProjectsController" data-ng-init="find()">
+    <div class="jumbotron">
+        <p>Here you can find the current projects we are working on as well as some projects that the team have worked on in the past. Click any one to find more information about them.</p>
+    </div>
+    <div class="projects">
+        <div data-ng-repeat="project in projects">
+            <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="circle-box">
+                    <div class="circle-content">
+                        <div class="circle-rank">{{project.rank}}</div>
+                        <a data-ng-href="/projects/{{project._id}}">
+                            <img src="{{project.avatar}}" class="circle-image" />
+                        </a>
+                        <div class="circle-title">{{project.title}}</div>
+                    </div>
+                </div>
+                </br>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <div class="circle-box">
+                <a data-ng-href="/projects/create">
+                    <div class="circle-content">
+                        <img src="https://cdn4.iconfinder.com/data/icons/website-kit-2/600/Sign_Up-512.png" class="circle-image" />
+                </a>
+                </div>
+            </div>
+            </br>
+        </div>
+    </div>
+    <h1 data-ng-hide="!projects || projects.length">No projects yet. <br> Why don't you <a href="/projects/create">Create One</a>?</h1>
+</section>
