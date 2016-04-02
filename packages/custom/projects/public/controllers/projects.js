@@ -36,10 +36,10 @@ angular.module('mean.projects').controller('ProjectsController', ['$scope', '$st
                     $location.path('projects/' + response._id);
                 });
 
-                $scope.project = {};
+                $scope.project = {}; 
 
             } else {
-                $scope.submitted = true;
+                 $scope.submitted = true;
             }
         };
 
