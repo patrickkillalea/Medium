@@ -1,32 +1,62 @@
-<section data-ng-controller="MembersController" data-ng-init="findOne()">
-    <div data-ng-if="hasAuthorization(member)">
-        <a class="btn" href="/members/{{member._id}}/edit">
-            <i class="glyphicon glyphicon-edit"></i>
-        </a>
-        <a class="btn" data-ng-click="remove(member);">
-            <i class="glyphicon glyphicon-trash"></i>
-        </a>
-    </div>
-    <div class="row">
-        <div class="col-md-3 col-sm-4 col-xs-6">
-            <div class="circle-box">
-                <div class="circle-content">
-                    <img src="{{member.avatar}}" class="circle-image" />
+<div class="col-md-9 col-sm-9 col-xs-12">
+    <section data-ng-controller="MembersController" data-ng-init="findOne()">
+        <div data-ng-if="hasAuthorization(member)">
+            <a class="btn" href="/members/{{member._id}}/edit">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+            <a class="btn" data-ng-click="remove(member);">
+                <i class="glyphicon glyphicon-trash"></i>
+            </a>
+        </div>
+        <div class="row" style="background-color: #c0dfd9;">
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="circle-box">
+                    <div class="circle-content">
+                        <img src="{{member.avatar}}" class="circle-image" />
+                    </div>
+                </div>
+                </br>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-6" style="color:white; " align="center">
+                <h2>{{member.title}}</h2>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="background-color: #3b3a36; height:100px; margin: 10px;">
+                    <span class="insetglyphicon glyphicon glyphicon-user" style="margin-top: 20px"></span>
+                    <div>{{member.rank}}</div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="background-color: #3b3a36; height:100px; margin: 10px;">
+                    <a data-toggle="tooltip" title={{member.email}}><span class="insetglyphicon glyphicon glyphicon-envelope" style="margin-top: 30px"></span></a>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12" style="background-color: #3b3a36; height:100px; margin: 10px;">
+                    <a data-toggle="tooltip" title={{member.number}}><span class="insetglyphicon glyphicon glyphicon-earphone" style="margin-top: 30px"></span></a>
                 </div>
             </div>
-            </br>
         </div>
-        <div class="col-md-9 col-sm-8 col-xs-6">
-            <h2>{{member.title}}</h2>
-            <div>{{member.rank}}</div>
-            <div>{{member.email}}</div>
-            <div>{{member.number}}</div>
+        <div class="row" style="background-color: #b3c2bf;">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <pre>{{member.content}}</pre>
+            </div>
         </div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <pre>{{member.content}}</pre>
+    </section>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-6">
+    <section data-ng-controller="ProjectsController" data-ng-init="find()">
+        <div class="projects" style="background-color: #3b3a36;">
+            <h3 style="color:white; ">Past Projects</h3>
+            <div data-ng-repeat="project in projects">
+                <div class="circle-box">
+                    <div class="circle-content">
+                        <div class="circle-rank">{{project.rank}}</div>
+                        <a data-ng-href="/projects/{{project._id}}">
+                            <img src="{{project.avatar}}" class="circle-image" />
+                        </a>
+                        <div class="circle-title">{{project.title}}</div>
+                    </div>
+                </div>
+                </br>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 <style>
 pre {
     white-space: pre-wrap;
@@ -40,11 +70,15 @@ pre {
     word-wrap: normal;
     /* Internet Explorer 5.5+ */
     word-break: normal;
-    background-color: white;
+    background-color: #b3c2bf;
     border: none;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
+    color: white;
+}
+
+.insetglyphicon {
+    font-size: 30px;
 }
 </style>
