@@ -3,72 +3,110 @@
     margin: 0 !important;
     border-bottom: 0 !important;
 }
+
 .page-header .navbar-nav {
     float: right;
 }
-.page-header > div > div, .page-header > div > ul {
+
+.page-header > div > div,
+.page-header > div > ul {
     display: inline-block;
 }
+
 .text-edit {
-    float: right; 
+    float: right;
     margin-top: 12px;
 }
+
 .account {
-    text-align:right;
+    text-align: right;
 }
-.account > div, .account > ul {
+
+.account > div,
+.account > ul {
     text-align: left;
 }
+
 .navbar .nav > li > a.brand {
     padding-left: 20px;
     margin-left: 0
 }
+
 .content {
     margin-top: 70px;
     width: 100%
-}
-footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	height: 30px;
-	width: 100%;
-	background: #ddd;
-	-webkit-box-shadow: 0 8px 6px 6px black;
-	-moz-box-shadow: 0 8px 6px 6px black;
-	box-shadow: 0 8px 6px 6px black
-}
-footer p {
-	padding: 5px 0 12px 10px
-}
-
-.featuredpic img{
-  width:510px;
-}
-/*.ng-invalid.ng-dirty{*/
-    /*border-color:#FA787E;*/
-/*}*/
-/*.ng-valid.ng-dirty{*/
-    /*border-color:#78FA89;*/
-/*}*/
-footer {
-    /*position: fixed;*/
-    left: 0;
-    bottom: 0;
-    height: 30px;
-    width: 100%;
-    background: #ddd;
-    -webkit-box-shadow: 0 8px 6px 6px black;
-    -moz-box-shadow: 0 8px 6px 6px black;
-    box-shadow: 0 8px 6px 6px black
 }
 
 footer p {
     padding: 5px 0 12px 10px
 }
 
-.footer {
+.featuredpic img {
+    width: 510px;
+}
+
+
+/*.ng-invalid.ng-dirty{*/
+
+
+/*border-color:#FA787E;*/
+
+
+/*}*/
+
+
+/*.ng-valid.ng-dirty{*/
+
+
+/*border-color:#78FA89;*/
+
+
+/*}*/
+
+footer {
+    left: 0;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
     color: #ffffff;
-    background-color: #171919;
-    min-height: 200px;
+    background-color: #3b3a36;
+}
+
+footer p {
+    padding: 5px 0 12px 10px
+}
+
+.navbar {
+    min-height: 70px;
+    background-color: #3b3a36;
+}
+
+pre {
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: normal;
+    /* Internet Explorer 5.5+ */
+    word-break: normal;
+    background-color: #639bf1;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: white;
+}
+
+.insetglyphicon {
+    font-size: 30px;
+}
+
+.mainContent {
+    -webkit-box-shadow: 20px 9px 12px 0px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 20px 9px 12px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 20px 9px 12px 0px rgba(0, 0, 0, 0.7);
 }

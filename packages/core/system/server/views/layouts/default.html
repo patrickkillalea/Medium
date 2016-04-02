@@ -2,11 +2,11 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
 {% include '../includes/head.html' %}
 
-<body data-ng-controller="ThemeController" ng-cloak class="ng-cloak" ng-class="state">
+<body data-ng-controller="ThemeController" ng-cloak class="ng-cloak" ng-class="state" style="background-color: #293e6a">
     <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"></div>
     <div data-ng-include="'/admin/views/index.html'"></div>
-    <section class="content">
-        <section class="container" style="background-color: #e9ece5">
+    <section class="content" >
+        <section class="container" style="background-color: #293e6a; margin-bottom: 200px;">
             {% block content %}{% endblock %}
         </section>
     </section>

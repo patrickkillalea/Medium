@@ -1,14 +1,6 @@
 <div class="col-md-9 col-sm-9 col-xs-12">
-    <section data-ng-controller="MembersController" data-ng-init="findOne()">
-        <div data-ng-if="hasAuthorization(member)">
-            <a class="btn" href="/members/{{member._id}}/edit">
-                <i class="glyphicon glyphicon-edit"></i>
-            </a>
-            <a class="btn" data-ng-click="remove(member);">
-                <i class="glyphicon glyphicon-trash"></i>
-            </a>
-        </div>
-        <div class="row" style="background-color: #c0dfd9;">
+    <section data-ng-controller="MembersController" data-ng-init="findOne()" class="mainContent">
+        <div class="row" style="background-color: #77ba9b;">
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="circle-box">
                     <div class="circle-content">
@@ -31,17 +23,24 @@
                 </div>
             </div>
         </div>
-        <div class="row" style="background-color: #b3c2bf;">
+        <div class="row" style="background-color: #639bf1;">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <pre>{{member.content}}</pre>
+            </div>
+            <div data-ng-if="hasAuthorization(member)">
+                <a class="btn" href="/members/{{member._id}}/edit">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+                <a class="btn" data-ng-click="remove(member);">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
             </div>
         </div>
     </section>
 </div>
 <div class="col-md-3 col-sm-3 col-xs-6">
     <section data-ng-controller="ProjectsController" data-ng-init="find()">
-        <div class="projects" style="background-color: #3b3a36;">
-            <h3 style="color:white; ">Past Projects</h3>
+        <div style="background-color: #77ba9b;">
             <div data-ng-repeat="project in projects">
                 <div class="circle-box">
                     <div class="circle-content">
@@ -57,28 +56,3 @@
         </div>
     </section>
 </div>
-<style>
-pre {
-    white-space: pre-wrap;
-    /* css-3 */
-    white-space: -moz-pre-wrap;
-    /* Mozilla, since 1999 */
-    white-space: -pre-wrap;
-    /* Opera 4-6 */
-    white-space: -o-pre-wrap;
-    /* Opera 7 */
-    word-wrap: normal;
-    /* Internet Explorer 5.5+ */
-    word-break: normal;
-    background-color: #b3c2bf;
-    border: none;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: white;
-}
-
-.insetglyphicon {
-    font-size: 30px;
-}
-</style>
