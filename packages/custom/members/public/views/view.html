@@ -42,13 +42,12 @@
     <section data-ng-controller="ProjectsController" data-ng-init="find()">
         <div style="background-color: #77ba9b;">
             <div data-ng-repeat="project in projects">
-                <div class="circle-box">
+                <div class="circle-box-member">
                     <div class="circle-content">
-                        <div class="circle-rank">{{project.rank}}</div>
                         <a data-ng-href="/projects/{{project._id}}">
-                            <img src="{{project.avatar}}" class="circle-image" />
+                            <img src="{{project.avatar}}" class="circle-image-member" />
                         </a>
-                        <div class="circle-title">{{project.title}}</div>
+                        <div class="circle-title-member">{{project.title}}</div>
                     </div>
                 </div>
                 </br>

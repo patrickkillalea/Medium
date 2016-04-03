@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean.projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', 'Global', 'Projects', 'MeanUser', 'Circles',
-    function($scope, $stateParams, $location, Global, Projects, MeanUser, Circles) {
+angular.module('mean.projects').controller('ProjectsController', ['$scope', '$stateParams', '$location', 'Global', 'Projects', 'MeanUser', 'Circles', 
+    function($scope, $stateParams, $location, Global, Projects, MeanUser, Circles, ProjectsController) {
         $scope.global = Global;
 
         $scope.hasAuthorization = function(project) {
